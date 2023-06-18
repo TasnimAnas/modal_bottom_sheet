@@ -3,8 +3,6 @@ import 'dart:async';
 import 'package:flutter/material.dart' hide ModalBottomSheetRoute;
 import 'package:flutter/services.dart';
 
-import '../../modal_bottom_sheet.dart' as modal_bottom_sheet;
-
 const Radius kDefaultBarTopRadius = Radius.circular(15);
 
 class BarBottomSheet extends StatelessWidget {
@@ -98,7 +96,7 @@ Future<T?> showBarModalBottomSheet<T>({
   assert(debugCheckHasMediaQuery(context));
   assert(debugCheckHasMaterialLocalizations(context));
   final result = await Navigator.of(context, rootNavigator: useRootNavigator)
-      .push(modal_bottom_sheet.ModalSheetRoute<T>(
+      .push(ModalBottomSheetRoute<T>(
     builder: builder,
     bounce: bounce,
     closeProgressThreshold: closeProgressThreshold,

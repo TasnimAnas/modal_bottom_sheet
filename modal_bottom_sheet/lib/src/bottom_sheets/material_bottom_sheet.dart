@@ -26,7 +26,7 @@ Future<T?> showMaterialModalBottomSheet<T>({
   assert(debugCheckHasMediaQuery(context));
   assert(debugCheckHasMaterialLocalizations(context));
   final result = await Navigator.of(context, rootNavigator: useRootNavigator)
-      .push(modal_bottom_sheet.ModalSheetRoute<T>(
+      .push(ModalBottomSheetRoute<T>(
     builder: builder,
     closeProgressThreshold: closeProgressThreshold,
     containerBuilder: _materialContainerBuilder(
@@ -52,8 +52,7 @@ Future<T?> showMaterialModalBottomSheet<T>({
 }
 
 //Default container builder is the Material Appearance
-modal_bottom_sheet.WidgetWithChildBuilder _materialContainerBuilder(
-    BuildContext context,
+WidgetWithChildBuilder _materialContainerBuilder(BuildContext context,
     {Color? backgroundColor,
     double? elevation,
     ThemeData? theme,
